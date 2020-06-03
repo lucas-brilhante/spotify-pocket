@@ -38,7 +38,7 @@ const Player = () => {
     return !playingNowTrack
         ? null
         : (
-            <div className="player is-playing">
+            <div className="player is-playing" data-testid="player">
                 <div className="player__wrapper">
                     <div className="player__progress-bar">
                         <div className="player__progress-bar__stroke"

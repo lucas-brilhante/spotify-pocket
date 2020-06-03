@@ -1,56 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, Redirect } from 'react-router-dom';
-import queryString from 'query-string';
-import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
+import React from 'react';
+import backgroundImage from '../../assets/images/app-intro-1.jpg';
 import { Loading } from '../../components';
-import { authentication, setUserInfo } from '../../actions';
-
 import './Authorize.scss';
 
 const Authorize = () => {
-  const [fetching, setFetching] = useState(false);
-  const location = useLocation();
-  const auth = useSelector(state => state.auth);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const getUserInfo = async () => {
-      const { access_token, expires_in, token_type } = queryString.parse(location.hash);
-      try {
-        const userInfo = await axios.get('https://api.spotify.com/v1/me', {
-          headers: {
-            Authorization: 'Bearer ' + access_token
-          }
-        });
-
-        dispatch(authentication(access_token, expires_in, token_type, true));
-
-        const { email, display_name, images } = userInfo.data;
-        dispatch(setUserInfo(email, display_name, images[0].url));
-      } catch (error) {
-        console.log(error)
-      }
-      setFetching(true);
-    }
-    getUserInfo();
-  }, [dispatch, location])
-
-  if (!fetching) {
-    return (
-      <div className="callback">
+  return (
+    <div
+      className="callback"
+      data-testid="callback"
+      style={{backgroundImage: `url(${backgroundImage})`}}>
+      <div className="container">
         <Loading text="Autenticando..." />
       </div>
-    )
-  }
-
-  if (!auth.isLogged)
-    return (
-      <Redirect to="/" />
-    )
-
-  return (
-    <Redirect to="/dashboard" />
+    </div>
   );
 }
 

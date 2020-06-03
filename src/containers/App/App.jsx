@@ -9,7 +9,7 @@ import './App.scss';
 const store = createPersistedStore();
 
 const App = () => (
-    <div className="app">
+    <div className="app" data-testid="app">
         <Provider store={store.store}>
             <PersistGate loading={null} persistor={store.persistor}>
                 <Routes />

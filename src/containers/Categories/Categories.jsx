@@ -1,17 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { Loading } from '../../components';
-import { WelcomeBox } from '../../components';
 import CategoryItem from './CategoryItem';
-import { useSelector } from 'react-redux';
 
 import './Categories.scss';
 
 const Categories = ({ data, isLoading, url }) => {
-    const { name } = useSelector(state => state.user);
     return (
-        <Fragment>
-        <WelcomeBox name={name} />
-        <div className="categories">
+        <div className="categories" data-testid="categories">
             <div className="container">
                 <h3 className="categories__title">Categorias</h3>
                 <div className="categories__content">
@@ -27,7 +22,6 @@ const Categories = ({ data, isLoading, url }) => {
                 </div>
             </div>
         </div>
-        </Fragment>
     );
 }
 

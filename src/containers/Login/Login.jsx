@@ -11,7 +11,7 @@ const url = `${spotify.authorizationURL}?client_id=${spotify.clientId}${(spotify
 
 const Login = () => {
     return (
-        <main className="login"
+        <main className="login" data-testid="login"
             style={{ backgroundImage: "url(" + AppIntro1 + ")" }}
         >
             <div className="container">

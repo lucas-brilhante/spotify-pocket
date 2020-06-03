@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Login, Authorize, PrivateRoute } from '../containers';
+import { Login, AuthorizeMain, PrivateRoute } from '../containers';
 import DashboardMain from '../containers/Dashboard/DashboardMain';
 
 const Routes = () => (
@@ -10,7 +10,7 @@ const Routes = () => (
                 <Login />
             </Route>
             <Route path="/authorize">
-                <Authorize />
+                <AuthorizeMain />
             </Route>
             <PrivateRoute path="/dashboard" comp={DashboardMain} />
         </Switch>

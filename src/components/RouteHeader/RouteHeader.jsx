@@ -5,9 +5,9 @@ import { RiArrowLeftLine } from 'react-icons/ri';
 import './RouteHeader.scss';
 
 const RouterHeader = ({ categoryName, path }) => (
-    <div className="route-header">
+    <div className="route-header" data-testid="route-header">
         <div className="route-header__title-group">
-            <Link to={path} className="back-button">
+            <Link to={path?path:'/dashboard'} className="back-button">
                 <RiArrowLeftLine />
             </Link>
             <span className="route-header__title">{categoryName}</span>

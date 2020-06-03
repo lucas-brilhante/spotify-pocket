@@ -1,5 +1,6 @@
 import App from './App/App';
 import Authorize from './Authorize/Authorize';
+import AuthorizeMain from './Authorize/AuthorizeMain';
 import Categories from './Categories/Categories';
 import CategoryItem from './Categories/CategoryItem';
 import Dashboard from './Dashboard/Dashboard';
@@ -17,6 +18,7 @@ import TracksMain from './Tracks/TracksMain';
 export {
   App,
   Authorize,
+  AuthorizeMain,
   Categories,
   CategoryItem,
   Dashboard,

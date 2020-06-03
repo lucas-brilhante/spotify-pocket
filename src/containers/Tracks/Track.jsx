@@ -18,7 +18,9 @@ const Track = ({ track }) => {
     }
 
     return (
-        <div className={(track.id === playingNowId) ? " track is-playing" : "track" } onClick={handleClick}>
+        <div className={(track.id === playingNowId) ? " track is-playing" : "track" }
+            data-testid="track"
+            onClick={handleClick}>
             <div className="track__play">
                 <div className="track__play__wrapper">
                     <BsPlayFill className="track__play__icon" />

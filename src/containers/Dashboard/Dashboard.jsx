@@ -3,7 +3,7 @@ import './Dashboard.scss';
 
 const Dashboard = ({ children }) => {
     return (
-    <div className="dashboard" style={{paddingBottom:93}}>
+    <div className="dashboard" data-testid="dashboard" style={{paddingBottom:93}}>
         {children}
     </div>
     );

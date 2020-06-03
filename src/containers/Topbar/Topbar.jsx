@@ -7,7 +7,7 @@ import './Topbar.scss';
 const Topbar = () => {
     const user = useSelector(state => state.user);
     return (
-        <header className="topbar">
+        <header className="topbar" data-testid="topbar">
             <div className="container">
                 <Link to="/dashboard">
                     <SpotifyLogo className="spotify-brand" data-testid="logo"/>

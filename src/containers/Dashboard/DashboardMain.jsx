@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Dashboard, Topbar, Categories, PlaylistsMain, Player } from '../../containers';
+import { WelcomeBox } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { setCategories, setUserInfo } from '../../actions';
@@ -44,6 +45,7 @@ const DashboardMain = () => {
             <Topbar />
             <Switch>
                 <Route path="/dashboard" exact={true}>
+                    <WelcomeBox name={name} />
                     <Categories data={categories} isLoading={isLoading} url={'/dashboard'} />
                 </Route>
                 <Route path="/dashboard/:playlists">

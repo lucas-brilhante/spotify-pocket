@@ -8,7 +8,7 @@ const Playlists = ({ data, categoryName, categoryId, isLoading, path }) => {
     return isLoading
         ? (<Loading />)
         : (
-            <div className="playlists">
+            <div className="playlists" data-testid="playlists">
                 <div className="container">
                     <RouteHeader categoryName={categoryName} path={path} />
                     <div className="playlists__content">
