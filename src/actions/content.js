@@ -21,8 +21,8 @@ export const playTrack = (track) => ({
     }
 })
 
-export const stopTrack = () =>({
-    type: 'STOP_TRACK',
+export const removeTrack = () =>({
+    type: 'REMOVE_TRACK',
     payload: {
         playingNowId: null,
         playingNowTrack: null, 

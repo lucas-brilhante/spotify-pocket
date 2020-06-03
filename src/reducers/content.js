@@ -20,7 +20,7 @@ export default createReducer(initialState, {
         playingNowId: action.payload.playingNowId,
         playingNowTrack: action.payload.playingNowTrack
     }),
-    STOP_TRACK: (state, action) => ({
+    REMOVE_TRACK: (state, action) => ({
         ...state,
         playingNowId: action.payload.playingNowId,
         playingNowTrack: action.payload.playingNowTrack

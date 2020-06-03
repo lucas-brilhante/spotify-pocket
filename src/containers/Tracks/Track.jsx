@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { BsPlayFill, BsVolumeUpFill } from 'react-icons/bs';
 import Ink from 'react-ink';
-import { playTrack, stopTrack } from '../../actions';
+import { playTrack, removeTrack } from '../../actions';
 
 import './Track.scss';
 
@@ -12,7 +12,7 @@ const Track = ({ track }) => {
 
     const handleClick = () =>{
         if(track.id === playingNowId)
-            dispatch(stopTrack());
+            dispatch(removeTrack());
         else
             dispatch(playTrack(track))
     }
