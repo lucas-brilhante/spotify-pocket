@@ -12,7 +12,17 @@ const initialState = {
 };
 
 export default createReducer(initialState, {
-    SET_CATEGORIES: (state,action) => ({...state, categories: action.payload}),
-    SET_PLAYLISTS: (state, action) => ({...state, playlists: action.payload}),
-    SET_TRACKS: (state, action) => ({...state, tracks: action.payload}),
+    SET_CATEGORIES: (state, action) => ({ ...state, categories: action.payload }),
+    SET_PLAYLISTS: (state, action) => ({ ...state, playlists: action.payload }),
+    SET_TRACKS: (state, action) => ({ ...state, tracks: action.payload }),
+    PLAY_TRACK: (state, action) => ({
+        ...state,
+        playingNowId: action.payload.playingNowId,
+        playingNowTrack: action.payload.playingNowTrack
+    }),
+    STOP_TRACK: (state, action) => ({
+        ...state,
+        playingNowId: action.payload.playingNowId,
+        playingNowTrack: action.payload.playingNowTrack
+    }),
 });

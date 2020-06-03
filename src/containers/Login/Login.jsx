@@ -7,7 +7,7 @@ import './Login.scss';
 
 const { spotify } = config;
 
-const url = `${spotify.authorizationURL}?client_id=${spotify.clientId}${(spotify.scopes ? '&scope=' + encodeURIComponent(spotify.scopes) : '')}&redirect_uri=${encodeURIComponent(spotify.redirectUrl)}&response_type=token&show_dialog=true`;
+const url = `${spotify.authorizationURL}?client_id=${spotify.clientId}${(spotify.scopes ? '&scope=' + encodeURIComponent(spotify.scopes) : '')}&redirect_uri=${encodeURIComponent(spotify.redirectUrl)}&response_type=token&show_dialog=true`
 
 const Login = () => {
     return (
@@ -22,7 +22,7 @@ const Login = () => {
                     <span role="img" aria-label="Coração"> ❤️</span>
                     </strong>
                 </div>
-                <a  href={url}
+                <a href={url}
                     className="login__auth-button">
                     Entrar com Spotify
                 </a>

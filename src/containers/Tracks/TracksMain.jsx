@@ -32,7 +32,7 @@ const TracksMain = () => {
     }, [playlistId, accessToken, dispatch])
 
     return (
-        <Tracks categoryName={category.name} data={tracks} isLoading={isLoading} path={'/dashboard'} />
+        <Tracks categoryName={category?category.name:''} data={tracks} isLoading={isLoading} path={'/dashboard'} />
     )
 }
 

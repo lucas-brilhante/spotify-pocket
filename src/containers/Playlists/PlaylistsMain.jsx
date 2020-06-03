@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Playlists } from '../../containers';
+import { Playlists, TracksMain } from '../../containers';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Switch, Route } from 'react-router-dom';
 import { setPlaylists } from '../../actions';
 
 const PlaylistsMain = () => {
@@ -32,13 +32,20 @@ const PlaylistsMain = () => {
     }, [accessToken, dispatch, playlists])
 
     return (
-        <Playlists
-            data={data}
-            categoryName={category.name}
-            categoryId={playlists}
-            isLoading={isFetching}
-            path='/dashboard'
-        />
+        <Switch>
+            <Route path="/dashboard/:playlists" exact={true}>
+                <Playlists
+                    data={data}
+                    categoryName={category?.name}
+                    categoryId={playlists}
+                    isLoading={isFetching}
+                    path='/dashboard'
+                />
+            </Route>
+            <Route path="/dashboard/:playlists/:playlistId">
+                <TracksMain />
+            </Route>
+        </Switch>
     )
 }
 

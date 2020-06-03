@@ -24,12 +24,10 @@ const Authorize = () => {
           }
         });
 
-        if (userInfo.request.status === 200)
-          dispatch(authentication(access_token, expires_in, token_type, true));
+        dispatch(authentication(access_token, expires_in, token_type, true));
 
-          console.log('user', userInfo.data)
-          const {email, display_name, images} = userInfo.data;
-          dispatch(setUserInfo(email, display_name, images[0].url));
+        const { email, display_name, images } = userInfo.data;
+        dispatch(setUserInfo(email, display_name, images[0].url));
       } catch (error) {
         console.log(error)
       }
