@@ -7,10 +7,12 @@ import Login from './Login/Login';
 import Player from './Player/Player';
 import PlaylistItem from './Playlists/PlaylistItem';
 import Playlists from './Playlists/Playlists';
+import PlaylistsMain from './Playlists/PlaylistsMain';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Topbar from './Topbar/Topbar';
 import Track from './Tracks/Track';
 import Tracks from './Tracks/Tracks';
+import TracksMain from './Tracks/TracksMain';
 
 export {
   App,
@@ -22,8 +24,10 @@ export {
   Player,
   PlaylistItem,
   Playlists,
+  PlaylistsMain,
   PrivateRoute,
   Topbar,
   Track,
   Tracks,
+  TracksMain
 }

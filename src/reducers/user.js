@@ -1,10 +1,13 @@
 import createReducer from './createReducer';
 
-const initialState = [];
+const initialState = {
+  email: '',
+  errorMessage: '',
+  name: '',
+  status: '',
+  thumb: ''
+};
 
 export default createReducer(initialState, {
-    "teste": (state, action) => {
-        const text = action.text.trim()
-        return [...state, text]
-      }
+    SET_USER_INFO: (state, action) => ({...state, ...action.payload})
 });

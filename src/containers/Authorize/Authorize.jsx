@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { Loading } from '../../components';
-import { authentication } from '../../actions';
+import { authentication, setUserInfo } from '../../actions';
 
 import './Authorize.scss';
 
@@ -26,6 +26,10 @@ const Authorize = () => {
 
         if (userInfo.request.status === 200)
           dispatch(authentication(access_token, expires_in, token_type, true));
+
+          console.log('user', userInfo.data)
+          const {email, display_name, images} = userInfo.data;
+          dispatch(setUserInfo(email, display_name, images[0].url));
       } catch (error) {
         console.log(error)
       }
